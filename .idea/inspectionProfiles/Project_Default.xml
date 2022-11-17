@@ -1,0 +1,25 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="bboard.settings" />
+          <option value="bboard.main.utilities.settings" />
+          <option value="bboard.bboard.settings.SETTINGS_PATH" />
+          <option value="django.shortcuts.refirect" />
+          <option value="bboard.main.views.redirect" />
+          <option value="bboard.main.urls.profile_bb_change" />
+          <option value="bboard.main.views.Comment" />
+          <option value="bboard.main.views.UserCommentForm" />
+          <option value="bboard.main.views.GuestCommentForm" />
+          <option value="bboard.main.models.send_new_comment_notification" />
+          <option value="main.models" />
+          <option value="bboard.main.views.BbSerializer" />
+          <option value="bboard.api.views.bbs" />
+          <option value="django.utils.translation.ugettext_lazy" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

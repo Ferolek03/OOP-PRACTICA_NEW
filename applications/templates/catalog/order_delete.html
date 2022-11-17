@@ -1,0 +1,20 @@
+{% extends 'basic.html' %}
+{% load bootstrap4 %}
+{% block content %}
+    <h2 style="margin-top: 100px;">Удаление записи {{ order.name }}</h2>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            {% if order.image %}
+            <div class="col-md-auto"><img src="{{ bb.image.url }}" class="main-image"></div>
+            {% endif %}
+            <div class="col">
+                <h2>{{ order.title }}</h2>
+                <p>{{ order.content }}</p>
+            </div>
+        </div>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {% buttons submit='Удалить' %}{% endbuttons %}
+    </form>
+{% endblock %}

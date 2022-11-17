@@ -1,0 +1,31 @@
+{% extends "basic.html" %}
+{% block content %}
+    <h1 style="margin-top: 100px;">Мои заявки</h1>
+
+<div>фильтр по статусу</div>
+    <a href="{% url 'orders' %}">все</a>
+{% for item in status %}
+    <a href="{%url 'orders'%}?status={{ item.0 }}">{{ item.1 }}</a>
+{% endfor %}
+    {% if order_list %}
+        <ol>
+            {% for order in order_list %}
+                <li>
+                    {{ order.date }} ({{ order.status_verbose }})
+                        <ul>
+                                <li><p><b>Категория заявки :</b> {{ order.category }}</p>
+                                   <p><b>Заявка :</b>{{ order.name }}</p>
+                                    <p><b>Описание заявки :</b> {{order.descriptions}} </li></p>
+                                <p><img style="height: 100px; width: 100px" class="figure-img" src="media/{{ order.photo_file }}"></p>
+                        </ul>
+                </li>
+                {% if order.status == 'new' %}
+                        <a href="{% url 'delete_order'  order.pk %}">Удалить заявку</a>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p class="font-weight-bold">У вас пока нет заказов</p>
+    {% endif %}
+  <p><a href="{% url 'order_create' %}">Добавить объявление</a> </p>
+{% endblock %}
