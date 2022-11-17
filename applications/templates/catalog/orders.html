@@ -2,8 +2,8 @@
 {% block content %}
     <h1 style="margin-top: 100px;">Мои заявки</h1>
 
-<div>фильтр по статусу</div>
-    <a href="{% url 'orders' %}">все</a>
+<div>Фильтр по статусу</div>
+    <a href="{% url 'orders' %}">Все</a>
 {% for item in status %}
     <a href="{%url 'orders'%}?status={{ item.0 }}">{{ item.1 }}</a>
 {% endfor %}
